@@ -77,7 +77,6 @@ def powers(L1, start_power, end_power):
             power_element = L1[list_index] ** power
             Placeholder_List.append(power_element)
         Matrix.append(Placeholder_List)
-        print(Placeholder_List)
         Placeholder_List = []
                     
     return Matrix
