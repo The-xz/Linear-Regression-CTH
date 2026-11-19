@@ -59,6 +59,7 @@ def matmul(S1, S2): #Preforms the matrix multiplication operation for acceptable
             if len(Placeholder_List) == len(S2[0]):
                 New_Matrix.append(Placeholder_List)
                 Placeholder_List = []
+
     return New_Matrix
 
         
@@ -70,12 +71,13 @@ def powers(L1, start_power, end_power):
     
     Placeholder_List = []
 
-    Matrix = [] # Transpose of matrix M
+    Matrix = [] 
     
     for list_index in range(0, len(L1)):
         for power in range(start_power, end_power + 1):
             power_element = L1[list_index] ** power
             Placeholder_List.append(power_element)
+            
         Matrix.append(Placeholder_List)
         Placeholder_List = []
                     
@@ -112,3 +114,6 @@ def matrix_problem_cheacker(Matrix_A):
 def list_problem_cheacker(List_A):
     if len(List_A) == 0:
         return True
+    
+if __name__ == '__main__':
+    matmul()
