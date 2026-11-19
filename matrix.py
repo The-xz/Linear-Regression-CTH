@@ -85,6 +85,7 @@ def powers(L1, start_power, end_power):
         
 #Creats a Matrix from data in an .txt file.
 def loadtxt(F1):
+    # Try-Except helps us raise errors without the code crashing.
     try:
         Matrix = []
 
@@ -114,6 +115,3 @@ def matrix_problem_cheacker(Matrix_A):
 def list_problem_cheacker(List_A):
     if len(List_A) == 0:
         return True
-    
-if __name__ == '__main__':
-    matmul()

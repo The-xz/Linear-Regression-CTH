@@ -2,6 +2,7 @@ import sys # sys.argv[1] takes the argument after the file name: "python .\nativ
 import matplotlib.pylab as plt
 from numpy import *
 
+#Takes each element of a list to the power of each number in the range(start_power end_power)
 def powers(L1, start_power, end_power): 
     
     if len(L1) == 0:
@@ -21,23 +22,24 @@ def powers(L1, start_power, end_power):
                     
     return array(Matrix)
 
+# Calculates a polynomial of type: y = a_0 + a_1 * x + a_2 * x ** 2 + ... + a_n * x ** n
 def poly(a,x):
     polynomial = 0
     power = 0
    
-    # Calculates a polynomial of type: y = a_0 + a_1 * x + a_2 * x ** 2 + ... + a_n * x ** n
     for koefficients in a:
         polynomial = polynomial + koefficients * x ** power
         power = power + 1
     return polynomial
     
+# Plots a graph with corresponding values in X2 and Y2
 def numpy_plot():
         
     X = [] # Temperature values
     Y = []
     Y2 = []
 
-    n = int(sys.argv[2]) # Polynomial degree
+    n = int(sys.argv[2]) # Polynomial degree (behaves like sys.argv[2])
 
     file_info = loadtxt(sys.argv[1])
 
@@ -49,7 +51,7 @@ def numpy_plot():
 
     points = (X[-1] - X[0])/0.2
 
-    X2 = linspace(int(X[0]), int(X[-1]), int(points)).tolist()
+    X2 = linspace(int(X[0]), int(X[-1]), int(points)).tolist() # Use int() for a whole number of points insteed of getting half points.
 
     Xp  = powers(X,0,n)
     Yp  = powers(Y,1,1)
@@ -65,5 +67,6 @@ def numpy_plot():
     plt.plot(X2,Y2)
     plt.show()
     
+# Start the programm
 if __name__ == "__main__":
     numpy_plot()
