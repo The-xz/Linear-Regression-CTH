@@ -49,9 +49,9 @@ def numpy_plot():
     for y_value in file_info:
         Y.append(y_value[1])
 
-    points = (X[-1] - X[0])/0.2
-
-    X2 = linspace(int(X[0]), int(X[-1]), int(points)).tolist() # Use int() for a whole number of points insteed of getting half points.
+    points = (min(X) - max(X))/0.2
+    
+    X2 = linspace(int(min(X)), int(max(X)), int(points)).tolist() # Use int() for a whole number of points insteed of getting half points.
 
     Xp  = powers(X,0,n)
     Yp  = powers(Y,1,1)

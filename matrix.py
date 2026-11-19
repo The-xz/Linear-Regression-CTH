@@ -22,9 +22,8 @@ def transpose(S1): #Preforms the transpose operation of a matrix of any type
             
     return Matrix_Transpose
 
-
-def invert(S1): #Preforms the inverse operation on a matrix, (only takes type 2x2 matrices)
-    
+#Preforms the inverse operation on a matrix, (only takes type 2x2 matrices)
+def invert(S1): 
     if matrix_problem_cheacker(S1) == True:
         return []
     
@@ -37,8 +36,8 @@ def invert(S1): #Preforms the inverse operation on a matrix, (only takes type 2x
     ]
     return inverse_Matrix
 
-
-def matmul(S1, S2): #Preforms the matrix multiplication operation for acceptable types of matrices
+#Preforms the matrix multiplication operation for acceptable types of matrices
+def matmul(S1, S2): 
 
     if matrix_problem_cheacker(S1) == True or matrix_problem_cheacker(S2) == True:
         return []
@@ -61,7 +60,6 @@ def matmul(S1, S2): #Preforms the matrix multiplication operation for acceptable
                 Placeholder_List = []
 
     return New_Matrix
-
         
 #Takes each element of a list to the power of each number in the range(start_power end_power)
 def powers(L1, start_power, end_power): 
