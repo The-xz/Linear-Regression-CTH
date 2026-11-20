@@ -39,7 +39,7 @@ def numpy_plot():
     Y = []
     Y2 = []
 
-    n = int(sys.argv[2]) # Polynomial degree (behaves like sys.argv[2])
+    n = int(sys.argv[2]) # Polynomial degree (behaves like sys.argv[2]), sys also gives us a str
 
     file_info = loadtxt(sys.argv[1])
 
@@ -49,7 +49,7 @@ def numpy_plot():
     for y_value in file_info:
         Y.append(y_value[1])
 
-    points = (min(X) - max(X))/0.2
+    points = (min(X) - max(X))/0.2 # max/min makes sure we we get the correct steps even if the list in unsorted.
     
     X2 = linspace(int(min(X)), int(max(X)), int(points)).tolist() # Use int() for a whole number of points insteed of getting half points.
 
